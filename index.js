@@ -1,4 +1,5 @@
 import plugin from '../../lib/plugins/plugin.js'
+import common from '../../lib/common/common.js'
 import fs from 'fs'
 if (!global.segment) {
   global.segment = (await import('oicq')).segment
@@ -51,7 +52,7 @@ export class How2CookPlugin extends plugin {
         })
       }
     })
-    await e.reply(await makeForwardMsg(e, details2Forward, e.msg))
+    await e.reply(await common.makeForwardMsg(e, details2Forward, e.msg))
   }
 
   async eatWhat (e) {
@@ -69,7 +70,7 @@ export class How2CookPlugin extends plugin {
             })
           }
         })
-        await e.reply(await makeForwardMsg(e, details2Forward, e.msg))
+        await e.reply(await common.makeForwardMsg(e, details2Forward, e.msg))
         break
       }
       case 'noon': {
@@ -87,7 +88,7 @@ export class How2CookPlugin extends plugin {
             })
           }
         })
-        await e.reply(await makeForwardMsg(e, details2Forward, e.msg))
+        await e.reply(await common.makeForwardMsg(e, details2Forward, e.msg))
         break
       }
       case 'evening': {
@@ -108,7 +109,7 @@ export class How2CookPlugin extends plugin {
             })
           }
         })
-        await e.reply(await makeForwardMsg(e, details2Forward, e.msg))
+        await e.reply(await common.makeForwardMsg(e, details2Forward, e.msg))
         break
       }
     }
